@@ -88,11 +88,9 @@ app.post("/repositories/:id/like", (request, response) => {
     return response.status(400).json({error: "Index not founded!"});
   }
 
-  atualProject = repositories[projectIndex];
-
   repositories[projectIndex].likes++;
 
-  return response.status(200).json(repositories[projectIndex]);
+  return response.json(repositories[projectIndex]);
 
 });
 
